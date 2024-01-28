@@ -40,8 +40,10 @@ p, h1, h2, h3, h4, h5, h6{
 }
     .header-container{
         display: flex; 
-        
-        }
+        border-bottom: 1px solid #E7E9FC;
+    background-color: #FFF;
+    box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 2px 1px 0px rgba(46, 47, 66, 0.08);    
+    }
 .header-nav-flex{
     display: flex;
     align-items: center;   
@@ -75,14 +77,19 @@ p, h1, h2, h3, h4, h5, h6{
     .navigation-item{
     padding: 24px 0;
     }
-    .header-menu::before{
+    .navigation-item:first-child{
+    position:relative;
+    color: #404BBF;
+    }
+    .header-menu::after{
     content: '';
     width: 48px;
     height: 4px;
     flex-shrink: 0;
     border-radius: 2px;
-    background: var(--OCEAN, #404BBF);
-    transform: translate(89px, 70px);
+    background-color:#404BBF;
+    position: absolute;
+    transform: translateY(-50%);
     
         }
     .header-nav{
