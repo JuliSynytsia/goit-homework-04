@@ -396,7 +396,7 @@ margin-bottom: 16px;
     letter-spacing: 0.02em;   
     margin-bottom: 16px;
 }
-.footer-social-box .social-icons-list{
+.footer-social-box .social-icons-flex{
     gap: 16px;
 }
 .footer-social-box .social-icons-list:hover{
