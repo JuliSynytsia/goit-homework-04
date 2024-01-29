@@ -49,11 +49,6 @@ p, h1, h2, h3, h4, h5, h6{
     align-items: center;   
     margin-right: auto;
     }
-.header-menu{
-    display: flex;
-    gap: 40px;
-    
-        }
     .logo{
         color:#4D5AE5;
         font-family: 'Raleway', sans-serif;
@@ -74,36 +69,42 @@ p, h1, h2, h3, h4, h5, h6{
     .logo .logo-word:hover{
     color: #404BBF;
     }
+    .header-menu{
+        display: flex;
+        gap: 40px;
+            }
     .navigation-item{
     padding: 24px 0;
     }
-    .navigation-item:first-child{
-    position:relative;
-    color: #404BBF;
-    }
-    .header-menu::after{
+    .header-nav{
+        color:#2E2F42;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+         padding: 24px 0;   }
+        .header-nav:hover,
+        .header-nav:focus {
+        color: #404BBF;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    .current::after{
     content: '';
-    width: 48px;
+    width: 100%;
     height: 4px;
-    flex-shrink: 0;
     border-radius: 2px;
     background-color:#404BBF;
     position: absolute;
-    transform: translateY(-50%);
-    
-        }
-    .header-nav{
-    color:#2E2F42;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-     padding: 24px 0;   }
-    .header-nav:hover,
-    .header-nav:focus {
-    color: #404BBF;
+    left: 0;
+    bottom: -1px;
     }
+        .current{
+    position:relative;
+    color: #404BBF;
+            }
+    
+    
 .address{
     font-style:normal;
     display: flex;
@@ -121,6 +122,7 @@ p, h1, h2, h3, h4, h5, h6{
         font-weight: 400;
         line-height: 1.5;
         letter-spacing: 0.02em;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     .address .address-link:hover,
     .address .address-link:focus{
@@ -139,9 +141,11 @@ p, h1, h2, h3, h4, h5, h6{
         background-repeat: no-repeat;
         background-position: center;
         background-color:#2E2F42;
+        background-size: cover;
+        max-width: 1440px;
     }
     .hero-title{
-        max-width: 496px;
+    max-width: 496px;
     color: #FFF;
     text-align: center;
     font-size: 56px;
@@ -153,10 +157,10 @@ p, h1, h2, h3, h4, h5, h6{
     }
     
     .hero-btn{
-        display: block;
-            font-family: 'Roboto', sans-serif;
-           min-width: 169px; 
-           height: 56px;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    min-width: 169px; 
+    height: 56px;
     color: #FFF;
     background: var(--IRIS, #4D5AE5);
     border: none;
@@ -166,11 +170,11 @@ p, h1, h2, h3, h4, h5, h6{
     letter-spacing: 0.04em;
     padding: 16px 32px;
     margin: 0 auto;
-          border-radius: 4px;
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-cursor: pointer;
-
-    }
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
     .hero-btn:hover,
     .hero-btn:focus{
     background-color: #404BBF;
@@ -213,12 +217,9 @@ gap: 24px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     }
-.advantages-list-flex svg{
+.advantages-icons {
     width: 64px;
     height: 64px;
-    flex-shrink: 0;
-    justify-content: center; 
-    
 }
 .box-icons{
     width: 264px;
@@ -226,7 +227,9 @@ gap: 24px;
     border-radius: 4px;
     border: 1px solid #8E8F99;
     background-color: #F4F4FD;
-    padding: 24px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 8px;
 }
     .advantages-list-flex{
@@ -252,6 +255,8 @@ background-color:#FFF;
 border-radius: 0px 0px 4px 4px;
 padding-right: 0;
 width: calc((100% - 72px) / 4);
+
+
 }
 .team-title {
 color: #2E2F42;
@@ -290,24 +295,32 @@ margin-bottom: 72px;
     .social-icons-list{
         width: 40px;
         height: 40px;
+        
+    }
+    .social-icons-list-link{
+        width: 100%;
+        height: 100%;
         border-radius: 50%;
         background-color:#4D5AE5;
-        position: relative;
-        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);  
+    }
+    .social-icons-list-link:hover,
+    .social-icons-list-link:focus{
+        background-color: #404bbf;
     }
     .social-icons-flex{
         display: flex;
         gap: 24px;
         justify-content: center;
+        margin-top: 8px;
     }
     .social-icons{
         fill: #F4F4FD;
         width: 16px;
         height: 16px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         }
         
 .team-cube-box{
@@ -317,7 +330,7 @@ background: var(--WHITE, #FFF);
 box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 
 }
-                    /* PORTFOLIO */
+              /* PORTFOLIO */
 .portfolio{
     padding-top: 120px;
     padding-bottom: 120px;   
@@ -350,7 +363,33 @@ margin-bottom: 72px;
 .portfolio-box-title{
 margin-bottom: 8px;
 }
-
+.portfolio-cover-text{
+    width: 100%;
+    height: 100%;
+    background-color: #4D5AE5;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    padding: 40px 23px;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+.portfolio-box:hover .portfolio-cover-text{
+    transform: translateY(0%);
+}
+.portfolio-cover-text-style{
+color: #F4F4FD;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.02em;
+}
+.portfolio-box-wrap{
+    position: relative;
+    overflow: hidden;
+    
+}
 .portfolio-box-container{
     display: flex;
     flex-direction: column;
@@ -365,6 +404,7 @@ margin-bottom: 8px;
     }
     .cointainer-footer{
       display: flex;
+      justify-content: baseline;
       gap: 120px;  
     }
    .footer-resume {
@@ -405,7 +445,8 @@ margin-bottom: 16px;
 }
 .footer-social-box .social-icons-flex{
     gap: 16px;
+    
 }
-.footer-social-box .social-icons-list:hover{
+.social-icons-list .foo:hover{
     background-color: #31D0AA;  
   }
